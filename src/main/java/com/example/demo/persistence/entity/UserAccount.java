@@ -13,17 +13,18 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class User {
+public class UserAccount {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String username;
 
     private String name;
 
     private String Password;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "userAccount")
     private List<Rating> ratings;
 }
