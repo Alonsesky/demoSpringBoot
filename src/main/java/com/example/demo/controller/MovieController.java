@@ -17,12 +17,7 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
-    @GetMapping("/movies")
-    @ResponseBody
-    public List<Movie> findAllMovies(){
-        System.out.println("Entro al metodo");
-         return movieService.findAll();
-    }
+    
 
     @PostMapping("/post")
     public  ResponseEntity<?> createMovie(@RequestBody Movie movie){
